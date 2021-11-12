@@ -1,4 +1,7 @@
 ﻿using System;
+using LighterGrp3.Klass;
+using LighterGrp3.Metoder;
+
 
 namespace LighterGrp3
 {
@@ -6,7 +9,11 @@ namespace LighterGrp3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            
+
+            
+
         }
     }
 }
