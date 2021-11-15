@@ -9,11 +9,11 @@ namespace LighterGrp3
     {
         static void Main(string[] args)
         {
+            
+            
 
-            AddUser.AddUserFromConsole();
-            AddUser.AddUserFromConsole();
+            
 
-            AddUser.PrintUser();
         }
     }
 }
