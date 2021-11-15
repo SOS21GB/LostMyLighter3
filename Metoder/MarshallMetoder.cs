@@ -5,16 +5,17 @@ namespace LighterGrp3.Metoder
 {
     class MarshallMetoder
     {
-        public void NewMarshall()
+        public static void NewMarshall()
         {
-            Klass.Marshall marshall = new Marshall();
+            
+            Marshall marshall = new Marshall();
             marshall.NR++;
             marshall.ID = /*userid+*/ marshall.NR;
 
-            Console.Write("At what address is this marshall located? ");
+            Console.Write("address");
             marshall.Address = Console.ReadLine();
 
-            Console.Write("For the tracker to work, we need the zip/postal code as well; [XXX XX]: ");
+            Console.Write("zip/postal; [XXX XX]: ");
             marshall.PostalCode = Convert.ToInt32(Console.ReadLine());
 
 
@@ -32,9 +33,9 @@ namespace LighterGrp3.Metoder
 
             void AddBrand()
             {
-                Console.WriteLine("What brand is your marshall? ");
+                Console.WriteLine("Brand: ");
                 marshall.Brand = Console.ReadLine();
-                Console.WriteLine ("How many hours is the estimated burn time? (if you don't know, press [0].");
+                Console.WriteLine ("How many hours?? (if you don't know, press [0].");
                 marshall.LifeExp = Convert.ToDateTime(Console.ReadLine());
                 Convert.ToDateTime(marshall.LifeExp);
 
