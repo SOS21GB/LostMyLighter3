@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +9,9 @@ namespace LighterGrp3.Metoder
 {
     class AddUser
     {
-        public List<User> Users { get; set; }
-        
+
         public static void AddUserFromConsole()
         {
-            List<User> users = new List<User>();
 
                 int id = User.users.Count()+1;
                 Console.Write("Enter name : ");
@@ -25,7 +23,7 @@ namespace LighterGrp3.Metoder
                 int numberofsearches = 0;
                 int numberofregisteredlighters = 0;
                 int numberoflostlighters = 0;
-              
+
                 new User(id, name, age, adress, numberofsearches, numberofregisteredlighters, numberoflostlighters);
         }
 
