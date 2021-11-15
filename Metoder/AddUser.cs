@@ -15,22 +15,33 @@ namespace LighterGrp3.Metoder
         {
             List<User> users = new List<User>();
 
-                User User = new User();
-                User.ID = users.Count() + 1;
+                int id = User.users.Count()+1;
                 Console.Write("Enter name : ");
-                User.Name = Console.ReadLine();
+                string name = Console.ReadLine();
                 Console.Write("Enter age : ");
-                User.Age = Convert.ToInt32(Console.ReadLine());
+                int age = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Enter Adress : ");
-                User.Adress = Console.ReadLine();
-                User.NumberOfSearches = 0;
-                User.NumberOfRegisteredLighters = 0;
-                User.NumberOfLostLighters = 0;
-                users.Add(User);
+                string adress = Console.ReadLine();
+                int numberofsearches = 0;
+                int numberofregisteredlighters = 0;
+                int numberoflostlighters = 0;
               
+                new User(id, name, age, adress, numberofsearches, numberofregisteredlighters, numberoflostlighters);
         }
 
-        
+        public static void PrintUser()
+        {
+            foreach (User u in User.users)
+            {
+                Console.WriteLine("ID : {0}",u.ID);
+                Console.WriteLine("Name : {0}", u.Name);
+                Console.WriteLine("Age : {0}", u.Age);
+                Console.WriteLine("Adress : {0}", u.Adress);
+                Console.WriteLine("Number of searches : {0}", u.NumberOfSearches);
+                Console.WriteLine("Number of registered lighters : {0}", u.NumberOfRegisteredLighters);
+                Console.WriteLine("Number of lost lighters : {0}", u.NumberOfLostLighters);
+            }
+        }
 
        
         

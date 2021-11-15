@@ -17,11 +17,6 @@ namespace LighterGrp3.Klass
         public int NumberOfSearches { get; set; }
         public int NumberOfRegisteredLighters { get; set; }
         public int NumberOfLostLighters { get; set; }
-        public List<User> Users
-        {
-            get { return Users; }
-            set { }
-        }
             
 
         //Tom konstruktor
@@ -43,13 +38,6 @@ namespace LighterGrp3.Klass
             this.NumberOfSearches = numberofsearches;
             this.NumberOfRegisteredLighters = numberofregisteredlighters;
             this.NumberOfLostLighters = numberoflostlighters;
-            
-        }
-
-
-        public void AddSearchCount()
-        {
-            NumberOfSearches++;
         }
 
 
