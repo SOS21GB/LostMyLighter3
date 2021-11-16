@@ -5,7 +5,7 @@ namespace LighterGrp3.Klass
 {
     class Marshall
     {
-        private static List<Marshall> marshalls = new List<Marshall>();
+        public static List<Marshall> marshalls = new List<Marshall>();
 
         private int _nr = 0;                           //marshallNr - ska den räkna upp för varje så ID blir 11,12,53,24 osv eller 11,12,51,21?
         private int _id;                               //userId + marshallNr
@@ -151,6 +151,18 @@ namespace LighterGrp3.Klass
             }
         }
 
+
+
+        void ActiveMarshalls()
+        {
+            foreach (Marshall m in marshalls)
+            {
+                if (Active)
+                {
+                    Console.WriteLine(Active);
+                }
+            }
+        }
         //Marshall marshall = new Marshall();
     }
 }
