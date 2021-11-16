@@ -154,6 +154,7 @@ namespace LighterGrp3.Klass
 
 
 
+
         public static void ActiveMarshalls()
         {
             foreach (Marshall m in marshalls)
@@ -161,6 +162,7 @@ namespace LighterGrp3.Klass
                 if (m.Active)
                 {
                     Console.WriteLine(m.Active);
+
                 }
             }
         }
