@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LighterGrp3.Metoder;
 
 namespace LighterGrp3.Klass
 {
@@ -153,13 +154,13 @@ namespace LighterGrp3.Klass
 
 
 
-        void ActiveMarshalls()
+        public static void ActiveMarshalls()
         {
             foreach (Marshall m in marshalls)
             {
-                if (Active)
+                if (m.Active)
                 {
-                    Console.WriteLine(Active);
+                    Console.WriteLine(m.Active);
                 }
             }
         }

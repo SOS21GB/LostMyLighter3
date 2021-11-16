@@ -1,5 +1,6 @@
 ﻿using System;
-using LighterGrp3.Metoder; 
+using LighterGrp3.Metoder;
+using LighterGrp3.Klass;
 
 namespace LighterGrp3
 {
@@ -40,6 +41,7 @@ namespace LighterGrp3
                     break;
                 case 2:
                     // Metod som visar lista med marschaller
+                    Marshall.ActiveMarshalls();
                     break;
                 case 3:
                     // Metod där man kan lägga till en NY marschall
