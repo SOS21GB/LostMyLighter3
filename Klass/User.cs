@@ -73,6 +73,7 @@ namespace LighterGrp3.Klass
             NumberOfLostLighters++;
             Console.WriteLine("Number of lost lighters: {0}", NumberOfLostLighters);
             // Tryck för att komma vidare
+            Console.WriteLine("Press any key to return to Main menu");
             Console.ReadKey();
             HeadMenu.MainMenu();
         }
