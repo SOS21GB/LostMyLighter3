@@ -41,6 +41,15 @@ namespace LighterGrp3.Klass
             NumberOfSearches++;
         }
 
+
+        public void AddLostLighter()
+        {
+            NumberOfLostLighters++;
+            Console.WriteLine("Number of lost lighters: {0}", NumberOfLostLighters);
+            // Tryck för att komma vidare
+            Console.ReadKey();
+            HeadMenu.MainMenu();
+        }
     }
 
     
