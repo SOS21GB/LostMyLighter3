@@ -18,7 +18,10 @@ namespace LighterGrp3.Klass
         private string _address;                       //adress 
         private int _postalCode;                       //postnummer
         private string _regByUser;                     //userId + eventuellt userName
+        public Marshall()
+        {
 
+        }
         public Marshall(int nr, int id, bool active, string brand, string address, int postalCode, DateTime lifeExp, DateTime expOut, DateTime regTime, string regByUser)
         //konstruktor med all info
         {
