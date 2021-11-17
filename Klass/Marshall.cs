@@ -6,17 +6,56 @@ namespace LighterGrp3.Klass
 {
     public class Marshall
     {
-        private int _id;                    //userId + marshallNr
-        private bool _active = false;       //
-        private string _brand = "x";        //märke på marshall
-        private string _address;            //adress 
-        private int _postalCode;            //postnummer
-        private double _lifeExp = 0.0 ;     //hur länge förväntas den brinna? Använd DateTime
-        private double _expOut;             //när förväntas den slockna? Använd DateTime
-        private double _regTime;            //när den registrerades. Använd DateTime
-        private string _regByUser;          //userId + eventuellt userName
-        private List<Marshall> _marshalls;
+        private static List<Marshall> marshalls = new List<Marshall>();
 
+        protected int _nr = 0;                           //marshallNr - ska den räkna upp för varje så ID blir 11,12,53,24 osv eller 11,12,51,21?
+        private int _id;                               //userId + marshallNr
+        private string _brand = "Unknown";             //märke på marshall
+        private bool _active = false;                  //
+        private DateTime _regTime;                     //när den registrerades. Använd DateTime
+        private int _lifeExp;                     //hur länge förväntas den brinna? Använd DateTime
+        private DateTime _expOut;                      //när förväntas den slockna? Använd DateTime
+        private string _address;                       //adress 
+        private int _postalCode;                       //postnummer
+        private int _regByUser = 0;                     //userId + eventuellt userName
+
+        public Marshall(int nr, int id, bool active, string brand, string address, int postalCode, int lifeExp, DateTime expOut, DateTime regTime, int regByUser)
+        //konstruktor med all info
+        {
+            this._nr = nr;
+            this._id = id;
+            this._brand = brand;
+            this._active = active;
+            this._lifeExp = lifeExp;
+            this._expOut = expOut;
+            this._regTime = regTime;
+            this._address = address;
+            this._postalCode = postalCode;
+            this._regByUser = regByUser;
+            marshalls.Add(this);
+        }
+        public Marshall(string brand, int lifeExp)
+        //konstruktor med märkesinfo
+        {
+            this._brand = brand;
+            this._lifeExp = lifeExp;
+        }
+
+        public Marshall()
+        {
+        }
+
+        public int NR
+        {
+            get
+            {
+                return _nr;
+            }
+            set
+            {
+                _nr = value;
+            }
+        }
         public int ID
         {
             get
@@ -72,7 +111,7 @@ namespace LighterGrp3.Klass
                 _postalCode = value;
             }
         }
-        public double LifeExp
+        public int LifeExp
         {
             get
             {
@@ -83,7 +122,7 @@ namespace LighterGrp3.Klass
                 _lifeExp = value;
             }
         }
-        public double ExpOut
+        public DateTime ExpOut
         {
             get
             {
@@ -94,7 +133,7 @@ namespace LighterGrp3.Klass
                 _expOut = value;
             }
         }
-        public double RegTime
+        public DateTime RegTime
         {
             get
             {
