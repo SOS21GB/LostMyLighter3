@@ -105,7 +105,7 @@ namespace LighterGrp3.Klass
                 _regTime = value;
             }
         }
-        public string RegByUser
+        public int RegByUser
         {
             get
             {
