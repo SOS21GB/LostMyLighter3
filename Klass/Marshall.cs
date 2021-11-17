@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using LighterGrp3.Metoder;
-using System.Linq;
 
 namespace LighterGrp3.Klass
 {
@@ -9,15 +7,15 @@ namespace LighterGrp3.Klass
     {
         public static List<Marshall> marshalls = new List<Marshall>();
 
-        private DateTime _regTime;           //när den registrerades. Använd DateTime
-        private int _id;                               
-        private string _address;                       //adress 
-        private string _postalCode;                       //postnummer
-        private string _brand = "Unknown";             
-        private double _burnHours;                //hur länge förväntas den brinna? Använd DateTime
-        private bool _isActive;                  
-        private DateTime _burnOutTime;                      //när förväntas den slockna? Använd DateTime
-        private int _regByUser = 0;                     //userId + eventuellt userName
+        private DateTime _regTime;          
+        private int _id;
+        private string _address;                   
+        private string _postalCode;                  
+        private string _brand = "Unknown";
+        private double _burnHours;           
+        private bool _isActive;
+        private DateTime _burnOutTime;                  
+        private int _regByUser;
 
         public Marshall(DateTime regTime, int id, string brand, double burnHours, bool isActive, DateTime burnOutTime, string address, string postalCode, int regByUser)
         //konstruktor med all info

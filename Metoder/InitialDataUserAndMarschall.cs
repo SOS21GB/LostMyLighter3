@@ -13,10 +13,10 @@ namespace LighterGrp3.Metoder
             User user3 = new User(300, "Lisa Larsson", 45, "Larssons Gata 3", 0, 0, 0);
             User user4 = new User(400, "Olle Olsson", 50, "Olssons Gata 4", 0, 0, 0);
             DateTime dt = new DateTime(2021,11,16); // Tillfälligt datetime för konstruktorn
-            Marshall marshall = new Marshall(01, 20, true, "märke1", "Sveagatan 1", 10000,dt, dt, dt, "user1");
-            Marshall marshall2 = new Marshall(02, 30, true, "märke2", "Svegatan 2", 20000, dt, dt, dt, "user2");
-            Marshall marshall3 = new Marshall(03, 40, true, "märke3", "Sveagatan 3", 30000, dt, dt, dt, "user3");
-            Marshall marshall4 = new Marshall(04, 50, true, "märke4", "Sveagatan 4", 40000, dt, dt, dt, "user4");
+            Marshall marshall1 = new Marshall (dt, 10, "märke1", 10000,true, dt, "Sveagatan 1", "12345", 100);
+            Marshall marshall2 = new Marshall(dt, 20, "märke2", 20000, true, dt, "Sveagatan 2", "23456", 200);
+            Marshall marshall3 = new Marshall(dt, 30, "märke3", 30000, true, dt, "Sveagatan 3", "34567", 300);
+            Marshall marshall4 = new Marshall(dt, 40, "märke4", 40000, true, dt, "Sveagatan 4", "45678", 400);
         }
       
 
