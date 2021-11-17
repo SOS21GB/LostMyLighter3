@@ -7,8 +7,12 @@ using LighterGrp3.Metoder;
 
 namespace LighterGrp3.Klass
 {
+
    
-    class User
+ 
+
+    public class User
+
     {
         //Fields & Properties
         public int ID { get; }
