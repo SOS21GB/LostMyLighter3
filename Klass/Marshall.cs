@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using LighterGrp3.Metoder;
+using System.Linq;
 
 namespace LighterGrp3.Klass
 {
@@ -8,52 +9,41 @@ namespace LighterGrp3.Klass
     {
         public static List<Marshall> marshalls = new List<Marshall>();
 
-        protected int _nr = 0;                           //marshallNr - ska den räkna upp för varje så ID blir 11,12,53,24 osv eller 11,12,51,21?
-        private int _id;                               //userId + marshallNr
-        private string _brand = "Unknown";             //märke på marshall
-        private bool _active = false;                  //
-        private DateTime _regTime;                     //när den registrerades. Använd DateTime
-        private int _lifeExp;                     //hur länge förväntas den brinna? Använd DateTime
-        private DateTime _expOut;                      //när förväntas den slockna? Använd DateTime
+        private DateTime _regTime;           //när den registrerades. Använd DateTime
+        private int _id;                               
         private string _address;                       //adress 
-        private int _postalCode;                       //postnummer
+        private string _postalCode;                       //postnummer
+        private string _brand = "Unknown";             
+        private double _burnHours;                //hur länge förväntas den brinna? Använd DateTime
+        private bool _isActive;                  
+        private DateTime _burnOutTime;                      //när förväntas den slockna? Använd DateTime
         private int _regByUser = 0;                     //userId + eventuellt userName
 
-        public Marshall(int nr, int id, bool active, string brand, string address, int postalCode, int lifeExp, DateTime expOut, DateTime regTime, int regByUser)
+        public Marshall(DateTime regTime, int id, string brand, double burnHours, bool isActive, DateTime burnOutTime, string address, string postalCode, int regByUser)
         //konstruktor med all info
         {
-            this._nr = nr;
             this._id = id;
-            this._brand = brand;
-            this._active = active;
-            this._lifeExp = lifeExp;
-            this._expOut = expOut;
             this._regTime = regTime;
+            this._brand = brand;
+            this._burnHours = burnHours;
+            this._isActive = isActive;
+            this._burnOutTime = burnOutTime;
             this._address = address;
             this._postalCode = postalCode;
             this._regByUser = regByUser;
+
             marshalls.Add(this);
         }
-        public Marshall(string brand, int lifeExp)
-        //konstruktor med märkesinfo
-        {
-            this._brand = brand;
-            this._lifeExp = lifeExp;
-        }
 
-        public Marshall()
-        {
-        }
-
-        public int NR
+        public DateTime RegTime
         {
             get
             {
-                return _nr;
+                return _regTime;
             }
             set
             {
-                _nr = value;
+                _regTime = value;
             }
         }
         public int ID
@@ -67,17 +57,6 @@ namespace LighterGrp3.Klass
                 _id = value;
             }
         }
-        public bool Active
-        {
-            get
-            {
-                return _active;
-            }
-            set
-            {
-                _active = value;
-            }
-        }
         public string Brand
         {
             get
@@ -87,6 +66,39 @@ namespace LighterGrp3.Klass
             set
             {
                 _brand = value;
+            }
+        }
+        public double BurnHours
+        {
+            get
+            {
+                return _burnHours;
+            }
+            set
+            {
+                _burnHours = value;
+            }
+        }
+        public bool IsActive
+        {
+            get
+            {
+                return _isActive;
+            }
+            set
+            {
+                _isActive = value;
+            }
+        }
+        public DateTime BurnOutTime
+        {
+            get
+            {
+                return _burnOutTime;
+            }
+            set
+            {
+                _burnOutTime = value;
             }
         }
         public string Address
@@ -100,7 +112,7 @@ namespace LighterGrp3.Klass
                 _address = value;
             }
         }
-        public int PostalCode
+        public string PostalCode
         {
             get
             {
@@ -109,39 +121,6 @@ namespace LighterGrp3.Klass
             set
             {
                 _postalCode = value;
-            }
-        }
-        public int LifeExp
-        {
-            get
-            {
-                return _lifeExp;
-            }
-            set
-            {
-                _lifeExp = value;
-            }
-        }
-        public DateTime ExpOut
-        {
-            get
-            {
-                return _expOut;
-            }
-            set
-            {
-                _expOut = value;
-            }
-        }
-        public DateTime RegTime
-        {
-            get
-            {
-                return _regTime;
-            }
-            set
-            {
-                _regTime = value;
             }
         }
         public int RegByUser
@@ -156,20 +135,16 @@ namespace LighterGrp3.Klass
             }
         }
 
-
-
-
         public static void ActiveMarshalls()
         {
             foreach (Marshall m in marshalls)
             {
-                if (m.Active)
+                if (m.IsActive)
                 {
-                    Console.WriteLine(m.Active);
+                    Console.WriteLine(m.IsActive);
 
                 }
             }
         }
-        //Marshall marshall = new Marshall();
     }
 }
