@@ -30,7 +30,7 @@ namespace LighterGrp3.Metoder
         }
 
         
-
+        /*
         public static void PrintAllUsers()
         {
             foreach (User u in User.users)
@@ -44,7 +44,7 @@ namespace LighterGrp3.Metoder
                 Console.WriteLine("Number of lost lighters : {0}", u.NumberOfLostLighters);
             }
         }
-
+        */
         
 
        
