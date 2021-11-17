@@ -21,7 +21,7 @@ namespace LighterGrp3.Metoder
             Console.Write("Enter brand : ");
             string brand = Console.ReadLine();
             Console.Write("Enter total burn hours : ");
-            double burnHours = Convert.ToInt32(Console.ReadLine());
+            double burnHours = Convert.ToDouble(Console.ReadLine());
             Console.Write("Is it active [Y/N]? ");
             string active = Console.ReadLine();
             bool isActive;
