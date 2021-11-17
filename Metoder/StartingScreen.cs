@@ -1,5 +1,6 @@
 ﻿using System;
-using LighterGrp3.Metoder; 
+using LighterGrp3.Metoder;
+using LighterGrp3.Klass; 
 
 namespace LighterGrp3
 {
@@ -37,9 +38,12 @@ namespace LighterGrp3
             {
                 case 1:
                     // Metod för Login (Obs metoden behöver skicka vidare till MainMenu)
+                    CurrentUser.current = LogIn.LogInMethod();
+                    HeadMenu.MainMenu(); 
                     break;
                 case 2:
                     // Metod för skapa ny användare (Obs, metoden behöver skicka vidare till MainMenu)
+                    AddUser.AddUserFromConsole(); 
                     break;
                 case 3:
                     // Metod för se lista med marschaller (Även om man inte är inloggad.)

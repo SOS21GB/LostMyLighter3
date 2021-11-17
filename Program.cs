@@ -10,9 +10,10 @@ namespace LighterGrp3
         static void Main(string[] args)
         {
             // Skapar fyra användare och fyra marschaller
-            InitialDataUserAndMarschall.InitialData(); 
-            
-            HeadMenu.MainMenu(); 
+            InitialDataUserAndMarschall.InitialData();
+
+            StartingScreen.StartMenu(); 
+
             
             
 
