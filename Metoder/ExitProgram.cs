@@ -7,6 +7,7 @@ namespace LighterGrp3.Metoder
         // Metod som skriver ut THE END! om användaren väljer option 7 i MainMenu
         public static void EndMessage(string text = "THE END!", int delay = 200)
         {
+            Console.Clear(); 
             for (int i = 0; i < text.Length; i++)
             {
                 Console.Write(text[i]);

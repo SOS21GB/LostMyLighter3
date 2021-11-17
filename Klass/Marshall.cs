@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using LighterGrp3.Metoder;
 
 namespace LighterGrp3.Klass
 {
     class Marshall
     {
-        private static List<Marshall> marshalls = new List<Marshall>();
+        public static List<Marshall> marshalls = new List<Marshall>();
 
         protected int _nr = 0;                           //marshallNr - ska den räkna upp för varje så ID blir 11,12,53,24 osv eller 11,12,51,21?
         private int _id;                               //userId + marshallNr
@@ -155,6 +156,20 @@ namespace LighterGrp3.Klass
             }
         }
 
+
+
+
+        public static void ActiveMarshalls()
+        {
+            foreach (Marshall m in marshalls)
+            {
+                if (m.Active)
+                {
+                    Console.WriteLine(m.Active);
+
+                }
+            }
+        }
         //Marshall marshall = new Marshall();
     }
 }

@@ -9,7 +9,13 @@ namespace LighterGrp3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Skapar fyra användare och fyra marschaller
+            InitialDataUserAndMarschall.InitialData(); 
+            
+            HeadMenu.MainMenu(); 
+            
+            
+
         }
     }
 }

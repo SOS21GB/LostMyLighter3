@@ -35,12 +35,48 @@ namespace LighterGrp3.Klass
             this.NumberOfLostLighters = numberoflostlighters;
             users.Add(this);
         }
-        
+
+        public void PrintCurrentUser()
+        {
+            Console.WriteLine("ID : {0}", ID);
+            Console.WriteLine("Name : {0}", Name);
+            Console.WriteLine("Age : {0}", Age);
+            Console.WriteLine("Adress : {0}", Adress);
+            Console.WriteLine("Number of searches : {0}", NumberOfSearches);
+            Console.WriteLine("Number of registered lighters : {0}", NumberOfRegisteredLighters);
+            Console.WriteLine("Number of lost lighters : {0}", NumberOfLostLighters);
+
+        }
+
+
+        public static User GetUserId(int id)
+        {
+            foreach (User u in User.users)
+            {
+                if (u.ID == id)
+                {
+                    return u;
+                }
+            }
+            return null;
+        }
+
+
         public void AddSearchCount()
         {
             NumberOfSearches++;
         }
 
+
+        public void AddLostLighter()
+        {
+            NumberOfLostLighters++;
+            Console.WriteLine("Number of lost lighters: {0}", NumberOfLostLighters);
+            // Tryck för att komma vidare
+            Console.WriteLine("Press any key to return to Main menu");
+            Console.ReadKey();
+            HeadMenu.MainMenu();
+        }
     }
 
     
