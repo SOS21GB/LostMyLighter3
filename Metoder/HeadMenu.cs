@@ -51,9 +51,11 @@ namespace LighterGrp3
                     break;
                 case 5:
                     // Metod som adderar 1 till lost lighter counter
+                    CurrentUser.current.AddLostLighter(); 
                     break;
                 case 6:
                     // Metod som visar användarens profil
+                    CurrentUser.current.PrintCurrentUser(); 
                     break;
                 case 7:
                     // Metod som visar hejdåhälsning och avslutar programmet
