@@ -42,7 +42,7 @@ namespace LighterGrp3.Metoder
                 Console.WriteLine("Age : {0}", u.Value.Age);
                 Console.WriteLine("Adress : {0}", u.Value.Adress);
                 Console.WriteLine("Number of searches : {0}", u.Value.NumberOfSearches);
-                Console.WriteLine("Number of registered lighters : {0}", u.Value.NumberOfRegisteredLighters);
+                Console.WriteLine("Number of registered lighters : {0}", u.Value.NumberOfRegisteredMarshalls);
                 Console.WriteLine("Number of lost lighters : {0}", u.Value.NumberOfLostLighters);
             }
         }

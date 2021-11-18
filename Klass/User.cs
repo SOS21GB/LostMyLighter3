@@ -20,7 +20,7 @@ namespace LighterGrp3.Klass
         public int Age { get; set; }
         public string Adress { get; set; }
         public int NumberOfSearches { get; set; } 
-        public int NumberOfRegisteredLighters { get; set; } 
+        public int NumberOfRegisteredMarshalls { get; set; } 
         public int NumberOfLostLighters { get; set; } 
         public static Dictionary<int, User> users = new Dictionary<int, User>();
 
@@ -29,14 +29,14 @@ namespace LighterGrp3.Klass
 
 
         //Konstruktor med alla fields 
-        public User(int id, string name, int age, string adress, int numberofsearches, int numberofregisteredlighters, int numberoflostlighters)
+        public User(int id, string name, int age, string adress, int numberofsearches, int numberofregisteredmarshalls, int numberoflostlighters)
         {
             this.ID = id;
             this.Name = name;
             this.Age = age;
             this.Adress = adress;
             this.NumberOfSearches = numberofsearches;
-            this.NumberOfRegisteredLighters = numberofregisteredlighters;
+            this.NumberOfRegisteredMarshalls = numberofregisteredmarshalls;
             this.NumberOfLostLighters = numberoflostlighters;
             users.Add(ID,this);
         }
@@ -49,7 +49,7 @@ namespace LighterGrp3.Klass
                 Console.WriteLine("Age : {0}", Age);
                 Console.WriteLine("Adress : {0}", Adress);
                 Console.WriteLine("Number of searches : {0}", NumberOfSearches);
-                Console.WriteLine("Number of registered lighters : {0}", NumberOfRegisteredLighters);
+                Console.WriteLine("Number of registered marshalls : {0}", NumberOfRegisteredMarshalls);
                 Console.WriteLine("Number of lost lighters : {0}", NumberOfLostLighters);
       
         }
@@ -65,6 +65,11 @@ namespace LighterGrp3.Klass
         public void AddSearchCount()
         {
             NumberOfSearches++;
+        }
+        public static void AddRegisteredMarshall()
+        {
+
+            CurrentUser.current.NumberOfRegisteredMarshalls++;
         }
 
 
