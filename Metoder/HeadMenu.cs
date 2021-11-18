@@ -39,6 +39,7 @@ namespace LighterGrp3
             {
                 case 1:
                     // Metod för att se aktiva marschaller genom att söka på postnummer
+                    Marshall.SearchMarshall();
                     break;
                 case 2:
                     // Metod som visar lista med aktiva marschaller

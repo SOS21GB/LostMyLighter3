@@ -31,6 +31,8 @@ namespace LighterGrp3.Metoder
 
             new Marshall( id, brand, burnHours, burnOutTime, address, postalCode, regByUser);
             HeadMenu.MainMenu();
+
+
         }
     }
 }

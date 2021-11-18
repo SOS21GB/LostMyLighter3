@@ -62,7 +62,7 @@ namespace LighterGrp3.Klass
         }
 
 
-        public void AddSearchCount()
+        public  void AddSearchCount()
         {
             NumberOfSearches++;
         }
