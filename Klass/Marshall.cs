@@ -196,7 +196,7 @@ namespace LighterGrp3.Klass
                 }
 
             }
-            while (userInput == 0 || userInput > 3);
+            while (userInput == 0 || userInput > 4);
 
             switch (userInput)
             {
@@ -255,7 +255,7 @@ namespace LighterGrp3.Klass
                 {
                     
                     Console.WriteLine("felaktig postalcode");
-                    Console.Clear();
+                    
 
                     SearchMarshall();
                 }
