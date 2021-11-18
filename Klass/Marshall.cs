@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LighterGrp3.Klass
 {
@@ -7,21 +8,21 @@ namespace LighterGrp3.Klass
     {
         public static List<Marshall> marshalls = new List<Marshall>();
 
-        private DateTime _regTime;          
+        private DateTime _regTime = DateTime.Now;
         private int _id;
-        private string _address;                   
-        private string _postalCode;                  
+        private string _address;
+        private string _postalCode;
         private string _brand = "Unknown";
-        private double _burnHours;           
+        private double _burnHours;
         private bool _isActive;
-        private DateTime _burnOutTime;                  
+        private DateTime _burnOutTime;
         private int _regByUser;
 
-        public Marshall(DateTime regTime, int id, string brand, double burnHours, bool isActive, DateTime burnOutTime, string address, string postalCode, int regByUser)
+
+        public Marshall(int id, string brand, double burnHours, bool isActive, DateTime burnOutTime, string address, string postalCode, int regByUser)
         //konstruktor med all info
         {
             this._id = id;
-            this._regTime = regTime;
             this._brand = brand;
             this._burnHours = burnHours;
             this._isActive = isActive;
@@ -135,12 +136,23 @@ namespace LighterGrp3.Klass
 
         public static void ActiveMarshalls()
         {
-            foreach (Marshall m in marshalls)
+            var byAdress = marshalls.OrderBy(x => x.Address).GroupBy(x => x.Address);
+            foreach (var group in byAdress)
             {
-                if (m.IsActive)
-                {
-                    Console.WriteLine(m.IsActive);
+                Console.WriteLine(group.Key);
 
+                foreach (var m in group)
+                {
+                    if (DateTime.Now < m.BurnOutTime)
+                    {
+
+                        Console.WriteLine(m.Brand);
+                        Console.WriteLine(m.Address);
+                        Console.WriteLine(m.BurnOutTime);
+                        Console.WriteLine();
+
+
+                    }
                 }
             }
         }
