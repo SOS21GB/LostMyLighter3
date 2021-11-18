@@ -23,8 +23,8 @@ namespace LighterGrp3.Metoder
                 Console.WriteLine("Edit address");
                 CurrentUser.current.Adress = Console.ReadLine();
 
-
-            }
+            
+        }
 
 
 
