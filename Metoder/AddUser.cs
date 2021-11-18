@@ -24,27 +24,29 @@ namespace LighterGrp3.Metoder
                 int numberofsearches = 0;
                 int numberofregisteredlighters = 0;
                 int numberoflostlighters = 0;
-                
 
-                new User(id, name, age, adress, numberofsearches, numberofregisteredlighters, numberoflostlighters);
+
+                CurrentUser.current = new User(id, name, age, adress, numberofsearches, numberofregisteredlighters, numberoflostlighters);
+                
+                HeadMenu.MainMenu();
         }
 
         
-        /*
+        
         public static void PrintAllUsers()
         {
-            foreach (User u in User.users)
+            foreach (KeyValuePair<int, User> u in User.users)
             {
-                Console.WriteLine("ID : {0}",u.ID);
-                Console.WriteLine("Name : {0}", u.Name);
-                Console.WriteLine("Age : {0}", u.Age);
-                Console.WriteLine("Adress : {0}", u.Adress);
-                Console.WriteLine("Number of searches : {0}", u.NumberOfSearches);
-                Console.WriteLine("Number of registered lighters : {0}", u.NumberOfRegisteredLighters);
-                Console.WriteLine("Number of lost lighters : {0}", u.NumberOfLostLighters);
+                Console.WriteLine("ID : {0}",u.Value.ID);
+                Console.WriteLine("Name : {0}", u.Value.Name);
+                Console.WriteLine("Age : {0}", u.Value.Age);
+                Console.WriteLine("Adress : {0}", u.Value.Adress);
+                Console.WriteLine("Number of searches : {0}", u.Value.NumberOfSearches);
+                Console.WriteLine("Number of registered lighters : {0}", u.Value.NumberOfRegisteredLighters);
+                Console.WriteLine("Number of lost lighters : {0}", u.Value.NumberOfLostLighters);
             }
         }
-        */
+        
         
 
        
