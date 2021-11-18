@@ -43,7 +43,8 @@ namespace LighterGrp3
                     break;
                 case 2:
                     // Metod för skapa ny användare (Obs, metoden behöver skicka vidare till MainMenu)
-                    AddUser.AddUserFromConsole(); 
+                    AddUser.AddUserFromConsole();
+                    
                     break;
                 case 3:
                     // Metod för se lista med marschaller (Även om man inte är inloggad.)
