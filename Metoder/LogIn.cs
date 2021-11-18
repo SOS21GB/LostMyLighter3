@@ -10,18 +10,39 @@ namespace LighterGrp3.Metoder
         public static User LogInMethod()
         {
             Console.WriteLine("Enter you're user ID: ");
-            int answer = Convert.ToInt32(Console.ReadLine());
 
-            foreach (KeyValuePair<int, User> user in User.users)
+            try
             {
-                
-                if (user.Value.ID == answer)
+                int answer = Convert.ToInt32(Console.ReadLine());
+                foreach (KeyValuePair<int, User> user in User.users)
                 {
-                    Console.WriteLine("Successfull Login");
-                    return user.Value;
+
+                    if (user.Value.ID == answer)
+                    {
+                        Console.WriteLine("Successfull Login");
+                        return user.Value;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect Login. Please try again.");
+                        StartingScreen.StartMenu();
+                        return null;
+                    }
                 }
+                return null;
             }
-            return null;
+
+
+            catch (Exception e)
+            {
+                Console.Clear();
+                Console.WriteLine(e.Message);
+                StartingScreen.StartMenu();
+                return null;
+            }
+
+
+
         }
     }
 }
