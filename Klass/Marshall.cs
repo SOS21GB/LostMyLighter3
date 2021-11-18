@@ -139,7 +139,7 @@ namespace LighterGrp3.Klass
                         Console.WriteLine(m.Brand);
                         Console.WriteLine(m.Address);
                         Console.WriteLine(m.BurnOutTime);
-                        Console.WriteLine("Registrerat av användarID:{0} ", m.RegByUser);
+                        Console.WriteLine("Registered by user{0}, {1}", m.RegByUser, m.RegTime);
                         Console.WriteLine();
 
 
@@ -147,7 +147,23 @@ namespace LighterGrp3.Klass
                 }
             }
         }
+        public static void PrintAllMarshalls()
+        {
+            var byAdress = marshalls.OrderBy(x => x.Address).GroupBy(x => x.Address);
+            foreach (var group in byAdress)
+            {
+                Console.Write(group.Key);
 
+                foreach (var m in group)
+                {
+                    Console.WriteLine(" {0}",m.PostalCode);
+                    Console.WriteLine(m.Brand);
+                    Console.WriteLine(m.BurnOutTime);
+                    Console.WriteLine("Registered by user{0}, {1} ", m.RegByUser, m.RegTime);
+                    Console.WriteLine();
+                }
+            }
+        }
 
         public static void AddExistingMarshall()
         {
