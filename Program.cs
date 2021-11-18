@@ -15,9 +15,9 @@ namespace LighterGrp3
 
 
 
-            HeadMenu.MainMenu();
-
             StartingScreen.StartMenu();
+
+            
 
 
             

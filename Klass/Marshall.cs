@@ -14,18 +14,18 @@ namespace LighterGrp3.Klass
         private string _postalCode;
         private string _brand = "Unknown";
         private double _burnHours;
-        private bool _isActive;
+
         private DateTime _burnOutTime;
         private int _regByUser;
 
 
-        public Marshall(int id, string brand, double burnHours, bool isActive, DateTime burnOutTime, string address, string postalCode, int regByUser)
+        public Marshall(int id, string brand, double burnHours, DateTime burnOutTime, string address, string postalCode, int regByUser)
         //konstruktor med all info
         {
             this._id = id;
             this._brand = brand;
             this._burnHours = burnHours;
-            this._isActive = isActive;
+
             this._burnOutTime = burnOutTime;
             this._address = address;
             this._postalCode = postalCode;
@@ -78,17 +78,7 @@ namespace LighterGrp3.Klass
                 _burnHours = value;
             }
         }
-        public bool IsActive
-        {
-            get
-            {
-                return _isActive;
-            }
-            set
-            {
-                _isActive = value;
-            }
-        }
+        
         public DateTime BurnOutTime
         {
             get
@@ -149,6 +139,7 @@ namespace LighterGrp3.Klass
                         Console.WriteLine(m.Brand);
                         Console.WriteLine(m.Address);
                         Console.WriteLine(m.BurnOutTime);
+                        Console.WriteLine("Registrerat av användarID:{0} ", m.RegByUser);
                         Console.WriteLine();
 
 
@@ -156,5 +147,20 @@ namespace LighterGrp3.Klass
                 }
             }
         }
+
+
+        public static void AddExistingMarshall()
+        {
+
+
+
+        }
+
+        public static void ShowExistingMarshall()
+        {
+
+
+        }
+       
     }
 }

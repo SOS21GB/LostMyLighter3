@@ -43,10 +43,12 @@ namespace LighterGrp3
                     // Metod som visar lista med aktiva marschaller
                     Marshall.ActiveMarshalls();
                     HeadMenu.MainMenu();
+
                     break;
                 case 3:
                     // Metod där man kan lägga till en NY marschall
                     AddMarshall.AddMarshallFromConsole();
+                    
                     break;
                 case 4:
                     // Metod där man kan lägga till en redan existerande marschall
