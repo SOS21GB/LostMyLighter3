@@ -12,10 +12,13 @@ namespace LighterGrp3
             // Skapar fyra användare och fyra marschaller
             InitialDataUserAndMarschall.InitialData();
 
-            //StartingScreen.StartMenu();
+
 
 
             HeadMenu.MainMenu();
+
+            StartingScreen.StartMenu();
+
 
             
             

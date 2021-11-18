@@ -9,13 +9,12 @@ namespace LighterGrp3.Metoder
     {
         public static User LogInMethod()
         {
-            Console.WriteLine("Enter you're userid: ");
+            Console.WriteLine("Enter you're user ID: ");
             int answer = Convert.ToInt32(Console.ReadLine());
 
             foreach (KeyValuePair<int, User> user in User.users)
             {
-                Console.WriteLine("");
-
+                
                 if (user.Value.ID == answer)
                 {
                     Console.WriteLine("Successfull Login");
