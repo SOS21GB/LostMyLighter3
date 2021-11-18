@@ -47,6 +47,7 @@ namespace LighterGrp3
                     
                     break;
                 case 3:
+                    Marshall.PrintAllMarshalls();
                     // Metod för se lista med marschaller (Även om man inte är inloggad.)
                     break;
                 case 4:
