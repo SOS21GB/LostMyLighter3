@@ -19,7 +19,8 @@ namespace LighterGrp3
                 Console.WriteLine("4. Add Existing marshal");
                 Console.WriteLine("5. Lost lighter counter");
                 Console.WriteLine("6. Show User profile");
-                Console.WriteLine("7. Exit program");
+                Console.WriteLine("7. Edit User profile");
+                Console.WriteLine("8. Exit program");
 
                 try
                 {
@@ -32,7 +33,7 @@ namespace LighterGrp3
                 }
 
             }
-            while (userInput == 0 || userInput > 7);
+            while (userInput == 0 || userInput > 8);
 
             switch (userInput)
             {
@@ -63,6 +64,11 @@ namespace LighterGrp3
                     HeadMenu.MainMenu();
                     break;
                 case 7:
+                    // Metod som editerar användarens profil
+                    EditUser.EditUserMethod();
+                    HeadMenu.MainMenu();
+                    break;
+                case 8:
                     // Metod som visar hejdåhälsning och avslutar programmet
                     ExitProgram.EndMessage(); 
                     break; 
