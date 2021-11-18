@@ -149,7 +149,7 @@ namespace LighterGrp3.Klass
         }
         public static void PrintAllMarshalls()
         {
-            var byAdress = marshalls.OrderBy(x => x.Address).GroupBy(x => x.Address);
+            var byAdress = marshalls.OrderBy(x => x.Adress).GroupBy(x => x.Adress);
             foreach (var group in byAdress)
             {
                 Console.Write(group.Key);
