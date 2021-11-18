@@ -41,7 +41,7 @@ namespace LighterGrp3.Metoder
             Console.WriteLine("Marshall will burn out {0}", burnOutTime);
             int regByUser = CurrentUser.current.ID;
 
-            new Marshall(regTime, id, brand, burnHours, isActive, burnOutTime, address, postalCode, regByUser);
+            new Marshall( id, brand, burnHours, isActive, burnOutTime, address, postalCode, regByUser);
         }
     }
 }

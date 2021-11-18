@@ -42,6 +42,7 @@ namespace LighterGrp3
                 case 2:
                     // Metod som visar lista med marschaller
                     Marshall.ActiveMarshalls();
+                    HeadMenu.MainMenu();
                     break;
                 case 3:
                     // Metod där man kan lägga till en NY marschall
@@ -55,7 +56,8 @@ namespace LighterGrp3
                     break;
                 case 6:
                     // Metod som visar användarens profil
-                    CurrentUser.current.PrintCurrentUser(); 
+                    CurrentUser.current.PrintCurrentUser();
+                    HeadMenu.MainMenu();
                     break;
                 case 7:
                     // Metod som visar hejdåhälsning och avslutar programmet
