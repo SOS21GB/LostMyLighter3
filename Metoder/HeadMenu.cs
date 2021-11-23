@@ -16,11 +16,10 @@ namespace LighterGrp3
                 Console.WriteLine("1. Find active marchals in your area");
                 Console.WriteLine("2. Show list with active marshals");
                 Console.WriteLine("3. Add new marshal to list");
-                Console.WriteLine("4. Add Existing marshal");
-                Console.WriteLine("5. Lost lighter counter");
-                Console.WriteLine("6. Show User profile");
-                Console.WriteLine("7. Edit User profile");
-                Console.WriteLine("8. Exit program");
+                Console.WriteLine("4. Lost lighter counter");
+                Console.WriteLine("5. Show User profile");
+                Console.WriteLine("6. Edit User profile");
+                Console.WriteLine("7. Exit program");
 
                 try
                 {
@@ -44,35 +43,31 @@ namespace LighterGrp3
                 case 2:
                     // Metod som visar lista med aktiva marschaller
                     Marshall.ActiveMarshalls();
-                    HeadMenu.MainMenu();
-
+                    MainMenu();
                     break;
                 case 3:
                     // Metod där man kan lägga till en NY marschall
                     AddMarshall.AddMarshallFromConsole();
-                    
                     break;
                 case 4:
-                    // Metod där man kan lägga till en redan existerande marschall
+                    // Metod som adderar 1 till lost lighter counter
+                    CurrentUser.current.AddLostLighter();
                     break;
                 case 5:
-                    // Metod som adderar 1 till lost lighter counter
-                    CurrentUser.current.AddLostLighter(); 
-                    break;
-                case 6:
                     // Metod som visar användarens profil
                     CurrentUser.current.PrintCurrentUser();
-                    HeadMenu.MainMenu();
+                    MainMenu();
                     break;
-                case 7:
+                case 6:
                     // Metod som editerar användarens profil
                     EditUser.EditUserMethod();
-                    HeadMenu.MainMenu();
+                    MainMenu();
                     break;
-                case 8:
+                case 7:
                     // Metod som visar hejdåhälsning och avslutar programmet
-                    ExitProgram.EndMessage(); 
-                    break; 
+                    ExitProgram.EndMessage();
+                    break;
+                   
             }
         }
 
