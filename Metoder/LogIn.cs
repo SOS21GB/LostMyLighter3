@@ -22,13 +22,9 @@ namespace LighterGrp3.Metoder
                         Console.WriteLine("Successfull login.");
                         return user.Value;
                     }
-                    else
-                    {
-                        Console.WriteLine("Incorrect login. Please try again.");
-                        StartingScreen.StartMenu();
-                        return null;
-                    }
                 }
+                Console.WriteLine("Incorrect login. Please try again.");
+                StartingScreen.StartMenu();
                 return null;
             }
 

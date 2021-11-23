@@ -204,20 +204,20 @@ Marshall will burn out at {m.BurnOutTime}
         public static void SearchMarshallPostalCode()
         {
 
-
-
             bool test = true;
             while (test)
             {
 
 
-
-                Console.WriteLine("Enter postalcode : ");
+                Console.WriteLine("Enter postal code : ");
                 string indata = (Console.ReadLine());
                 CurrentUser.current.AddSearchCount();
                 var postalCodeMarshall = marshalls.Where(name => name.PostalCode == indata);
                 foreach (var group in postalCodeMarshall)
                 {
+                  if (DateTime.Now < group.BurnOutTime) 
+                    {
+
                     Console.WriteLine(@$"Marshall ID : {group.ID}
 Brand : {group.Brand}
 Expected burn time : {group.BurnHours}h.
@@ -225,20 +225,23 @@ Address : {group.Address}, {group.PostalCode}
 Registered by user{CurrentUser.current.ID} at {group.RegTime}
 Marshall will burn out at {group.BurnOutTime}
 ");
+
                     test = false;
+                    }
 
-                    
                 }
-
-                if (test)
+                if (String.IsNullOrEmpty(indata))
+                {
+                    Console.WriteLine("Please enter some data!");
+                    test = false;
+                }
+                else if (test)
                 {
                     
-                    Console.WriteLine("Wrong postalcode");
-                    
-
+                    Console.WriteLine("No active Marshalls on this postalcode");
                     SearchMarshall();
                 }
-
+ 
                 Console.WriteLine("Press any key to continue..");
                 Console.ReadKey();
                 HeadMenu.MainMenu();
