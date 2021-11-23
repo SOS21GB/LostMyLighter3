@@ -13,10 +13,10 @@ namespace LighterGrp3.Metoder
         {
             DateTime regTime = DateTime.Now;
             int id = Marshall.marshalls.Count() + 1;
-            Console.WriteLine("Marshall ID : {0}", id);
+            Console.WriteLine($"Marshall ID : {id}");
             Console.Write("Enter address : ");
             string address = Console.ReadLine();
-            Console.Write("Enter postalcode : ");
+            Console.Write("Enter postal code : ");
             string postalCode = Console.ReadLine();
             Console.Write("Enter brand : ");
             string brand = Console.ReadLine();
@@ -24,7 +24,7 @@ namespace LighterGrp3.Metoder
             double burnHours = Convert.ToDouble(Console.ReadLine());
             
             DateTime burnOutTime = DateTime.Now.AddHours(burnHours);
-            Console.WriteLine("Marshall will burn out {0}", burnOutTime);
+            Console.WriteLine($"Marshall will burn out at {burnOutTime}");
             int regByUser = CurrentUser.current.ID;
             User.AddRegisteredMarshall();
 
