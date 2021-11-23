@@ -208,13 +208,9 @@ namespace LighterGrp3.Klass
         public static void SearchMarshallPostalCode()
         {
 
-
-
             bool test = true;
             while (test)
             {
-
-
 
                 Console.WriteLine("Enter postalcode");
                 string indata = (Console.ReadLine());
@@ -222,29 +218,33 @@ namespace LighterGrp3.Klass
                 var postalCodeMarshall = marshalls.Where(name => name.PostalCode == indata);
                 foreach (var group in postalCodeMarshall)
                 {
-                    Console.WriteLine("Marhall ID: {0}", group.ID);
-                    Console.WriteLine("Marshall brand: {0}", group.Brand);
-                    Console.WriteLine("Marshall expected burntime {0}", group.BurnHours);
-                    Console.WriteLine("Marshall adress {0}", group.Address);
-                    Console.WriteLine("Marshall postal code {0}", group.PostalCode);
-                    Console.WriteLine("Marshall registered time {0}", group.RegTime);
-                    Console.WriteLine("Marshall will expire in {0}", group.BurnOutTime);
-                    Console.WriteLine("User ID:{0}", CurrentUser.current.ID);
+                    if (DateTime.Now < group.BurnOutTime) 
+                    { 
+                    Console.WriteLine("ID: {0}", group.ID);
+                    Console.WriteLine("Brand: {0}", group.Brand);
+                    Console.WriteLine("Expected burntime {0}", group.BurnHours);
+                    Console.WriteLine("Adress {0}", group.Address);
+                    Console.WriteLine("Postalcode {0}", group.PostalCode);
+                    Console.WriteLine("Time registered {0}", group.RegTime);
+                    Console.WriteLine("Expires in {0}", group.BurnOutTime);
+                    Console.WriteLine("Registered by User : {0}", CurrentUser.current.ID);
                     Console.WriteLine();
                     test = false;
+                    }
 
-                    
                 }
-
-                if (test)
+                if (String.IsNullOrEmpty(indata))
+                {
+                    Console.WriteLine("Please enter some data!");
+                    test = false;
+                }
+                else if (test)
                 {
                     
-                    Console.WriteLine("Wrong postalcode");
-                    
-
+                    Console.WriteLine("No active Marshalls on this postalcode");
                     SearchMarshall();
                 }
-
+ 
                 Console.WriteLine("Press any key to continue..");
                 Console.ReadKey();
                 HeadMenu.MainMenu();
