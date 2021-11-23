@@ -14,19 +14,19 @@ namespace LighterGrp3.Metoder
         {
 
                 int id = User.users.Count()+1;
-                Console.WriteLine("Your ID : {0}", id);
+                Console.WriteLine($"Your ID : {id}");
                 Console.Write("Enter name : ");
                 string name = Console.ReadLine();
                 Console.Write("Enter age : ");
                 int age = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Enter Adress : ");
-                string adress = Console.ReadLine();
+                Console.Write("Enter Address : ");
+                string address = Console.ReadLine();
                 int numberofsearches = 0;
                 int numberofregisteredlighters = 0;
                 int numberoflostlighters = 0;
 
 
-                CurrentUser.current = new User(id, name, age, adress, numberofsearches, numberofregisteredlighters, numberoflostlighters);
+                CurrentUser.current = new User(id, name, age, address, numberofsearches, numberofregisteredlighters, numberoflostlighters);
                 
                 HeadMenu.MainMenu();
         }
@@ -37,13 +37,14 @@ namespace LighterGrp3.Metoder
         {
             foreach (KeyValuePair<int, User> u in User.users)
             {
-                Console.WriteLine("ID : {0}",u.Value.ID);
-                Console.WriteLine("Name : {0}", u.Value.Name);
-                Console.WriteLine("Age : {0}", u.Value.Age);
-                Console.WriteLine("Adress : {0}", u.Value.Adress);
-                Console.WriteLine("Number of searches : {0}", u.Value.NumberOfSearches);
-                Console.WriteLine("Number of registered lighters : {0}", u.Value.NumberOfRegisteredMarshalls);
-                Console.WriteLine("Number of lost lighters : {0}", u.Value.NumberOfLostLighters);
+                Console.WriteLine($@"User{u.Value.ID}
+Name : {u.Value.Name}
+Age : {u.Value.Age}
+Address : {u.Value.Address}
+Number of searches : {u.Value.NumberOfSearches}
+Number of registered marshalls : {u.Value.NumberOfRegisteredMarshalls}
+Number of lost lighters : {u.Value.NumberOfLostLighters}
+");
             }
         }
         

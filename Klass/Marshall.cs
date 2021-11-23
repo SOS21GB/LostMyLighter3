@@ -134,16 +134,13 @@ namespace LighterGrp3.Klass
                 {
                     if (DateTime.Now < m.BurnOutTime)
                     {
-
-
-                        Console.WriteLine($"Brand : {m.Brand}");
-                        Console.WriteLine($"Address : {m.Address} {m.PostalCode}");
-                        Console.WriteLine($"Will burn out in {m.BurnOutTime} hours.");
-                        Console.WriteLine($"Registered by : User{m.RegByUser}, {m.RegTime}");
-
-                        Console.WriteLine();
-
-
+                        Console.WriteLine($@", {m.PostalCode}
+Marshall ID : {m.ID}
+Brand : {m.Brand}
+Expected burn time : {m.BurnHours}h.
+Registered by user{CurrentUser.current.ID} at {m.RegTime}
+Marshall will burn out at {m.BurnOutTime}
+");
                     }
                 }
             }
@@ -157,11 +154,13 @@ namespace LighterGrp3.Klass
 
                 foreach (var m in group)
                 {
-                    Console.WriteLine(" {0}",m.PostalCode);
-                    Console.WriteLine(m.Brand);
-                    Console.WriteLine(m.BurnOutTime);
-                    Console.WriteLine("Registered by user{0}, {1} ", m.RegByUser, m.RegTime);
-                    Console.WriteLine();
+                    Console.WriteLine(@$", {m.PostalCode}
+Marshall ID : {m.ID}
+Brand : {m.Brand}
+Expected burn time : {m.BurnHours}h.
+Registered by user{CurrentUser.current.ID} at {m.RegTime}
+Marshall will burn out at {m.BurnOutTime}
+");
                 }
             }
         }
@@ -172,13 +171,10 @@ namespace LighterGrp3.Klass
             int userInput = 0;
             do
             {
-                Console.WriteLine("Search for existing marshalls by:\n");
-                Console.WriteLine("1. Postalcode");
-               
-                Console.WriteLine("2. Go back to main menu");
-
-
-
+                Console.WriteLine(@"Search for existing marshalls by:
+1. Postal code
+2. Go back to main menu
+");
                 try
                 {
                     userInput = Convert.ToInt32(Console.ReadLine());
@@ -212,23 +208,24 @@ namespace LighterGrp3.Klass
             while (test)
             {
 
-                Console.WriteLine("Enter postalcode");
+
+                Console.WriteLine("Enter postal code : ");
                 string indata = (Console.ReadLine());
                 CurrentUser.current.AddSearchCount();
                 var postalCodeMarshall = marshalls.Where(name => name.PostalCode == indata);
                 foreach (var group in postalCodeMarshall)
                 {
-                    if (DateTime.Now < group.BurnOutTime) 
-                    { 
-                    Console.WriteLine("ID: {0}", group.ID);
-                    Console.WriteLine("Brand: {0}", group.Brand);
-                    Console.WriteLine("Expected burntime {0}", group.BurnHours);
-                    Console.WriteLine("Adress {0}", group.Address);
-                    Console.WriteLine("Postalcode {0}", group.PostalCode);
-                    Console.WriteLine("Time registered {0}", group.RegTime);
-                    Console.WriteLine("Expires in {0}", group.BurnOutTime);
-                    Console.WriteLine("Registered by User : {0}", CurrentUser.current.ID);
-                    Console.WriteLine();
+                  if (DateTime.Now < group.BurnOutTime) 
+                    {
+
+                    Console.WriteLine(@$"Marshall ID : {group.ID}
+Brand : {group.Brand}
+Expected burn time : {group.BurnHours}h.
+Address : {group.Address}, {group.PostalCode}
+Registered by user{CurrentUser.current.ID} at {group.RegTime}
+Marshall will burn out at {group.BurnOutTime}
+");
+
                     test = false;
                     }
 

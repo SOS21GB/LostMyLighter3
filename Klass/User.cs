@@ -18,7 +18,7 @@ namespace LighterGrp3.Klass
         public int ID { get; }
         public string Name { get; set; }
         public int Age { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
         public int NumberOfSearches { get; set; } 
         public int NumberOfRegisteredMarshalls { get; set; } 
         public int NumberOfLostLighters { get; set; } 
@@ -29,12 +29,12 @@ namespace LighterGrp3.Klass
 
 
         //Konstruktor med alla fields 
-        public User(int id, string name, int age, string adress, int numberofsearches, int numberofregisteredmarshalls, int numberoflostlighters)
+        public User(int id, string name, int age, string address, int numberofsearches, int numberofregisteredmarshalls, int numberoflostlighters)
         {
             this.ID = id;
             this.Name = name;
             this.Age = age;
-            this.Adress = adress;
+            this.Address = address;
             this.NumberOfSearches = numberofsearches;
             this.NumberOfRegisteredMarshalls = numberofregisteredmarshalls;
             this.NumberOfLostLighters = numberoflostlighters;
@@ -43,15 +43,14 @@ namespace LighterGrp3.Klass
 
         public void PrintCurrentUser()
         {
-        
-                Console.WriteLine("ID : {0}", ID);
-                Console.WriteLine("Name : {0}",Name);
-                Console.WriteLine("Age : {0}", Age);
-                Console.WriteLine("Adress : {0}", Adress);
-                Console.WriteLine("Number of searches : {0}", NumberOfSearches);
-                Console.WriteLine("Number of registered marshalls : {0}", NumberOfRegisteredMarshalls);
-                Console.WriteLine("Number of lost lighters : {0}", NumberOfLostLighters);
-      
+            Console.WriteLine($@"User{ID}
+Name : {Name}
+Age : {Age}
+Address : {Address}
+Number of searches : {NumberOfSearches}
+Number of registered marshalls : {NumberOfRegisteredMarshalls}
+Number of lost lighters : {NumberOfLostLighters}
+");
         }
 
 
