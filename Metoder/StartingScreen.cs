@@ -15,7 +15,8 @@ namespace LighterGrp3
             do
             {
                 Console.WriteLine(@"WELCOME TO 'LOST MY LIGTHER'!
-Enter one of below numbers to proceed.\n
+Enter one of below numbers to proceed.
+
 1. Log in
 2. Create new user
 3. View list of marshalls
