@@ -165,13 +165,7 @@ namespace LighterGrp3.Klass
             }
         }
 
-        public static void AddExistingMarshall()
-        {
-
-
-
-        }
-
+ 
         public static void SearchMarshall()
         {
             int userInput = 0;
@@ -179,9 +173,8 @@ namespace LighterGrp3.Klass
             {
                 Console.WriteLine("Search for existing marshalls by:\n");
                 Console.WriteLine("1. Postalcode");
-                Console.WriteLine("2. Adress");
-                Console.WriteLine("3. UserID");
-                Console.WriteLine("4. Go back to main menu");
+               
+                Console.WriteLine("2. Go back to main menu");
 
 
 
@@ -203,17 +196,8 @@ namespace LighterGrp3.Klass
                 case 1:
                     SearchMarshallPostalCode();
                     break;
-                case 2:
-                    // Metod som visar lista med aktiva marschaller
-                    Marshall.ActiveMarshalls();
-                    HeadMenu.MainMenu();
 
-                    break;
-                case 3:
-                    // Metod där man kan lägga till en NY marschall
-                    // AddMarshall.AddMarshallFromConsole();
-                    break;
-                case 4:
+                case 2:
                     HeadMenu.MainMenu();
                     break;
 
@@ -254,13 +238,13 @@ namespace LighterGrp3.Klass
                 if (test)
                 {
                     
-                    Console.WriteLine("felaktig postalcode");
+                    Console.WriteLine("Wrong postalcode");
                     
 
                     SearchMarshall();
                 }
 
-                Console.WriteLine("Tryck på valfritangent för att gå vidare");
+                Console.WriteLine("Press any key to continue..");
                 Console.ReadKey();
                 HeadMenu.MainMenu();
             }
