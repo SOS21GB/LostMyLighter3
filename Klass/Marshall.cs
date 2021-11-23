@@ -10,7 +10,7 @@ namespace LighterGrp3.Klass
 
         private DateTime _regTime = DateTime.Now;
         private int _id;
-        private string _adress;
+        private string _address;
         private string _postalCode;
         private string _brand = "Unknown";
         private double _burnHours = 0;
@@ -19,15 +19,14 @@ namespace LighterGrp3.Klass
         private int _regByUser;
 
 
-        public Marshall(int id, string brand, double burnHours, DateTime burnOutTime, string adress, string postalCode, int regByUser)
+        public Marshall(int id, string brand, double burnHours, DateTime burnOutTime, string address, string postalCode, int regByUser)
         //konstruktor med all info
         {
             this._id = id;
             this._brand = brand;
             this._burnHours = burnHours;
-
             this._burnOutTime = burnOutTime;
-            this._adress = adress;
+            this._address = address;
             this._postalCode = postalCode;
             this._regByUser = regByUser;
 
@@ -90,15 +89,15 @@ namespace LighterGrp3.Klass
                 _burnOutTime = value;
             }
         }
-        public string Adress
+        public string Address
         {
             get
             {
-                return _adress;
+                return _address;
             }
             set
             {
-                _adress = value;
+                _address = value;
             }
         }
         public string PostalCode
@@ -126,8 +125,8 @@ namespace LighterGrp3.Klass
 
         public static void ActiveMarshalls()
         {
-            var byAdress = marshalls.OrderBy(x => x.Adress).GroupBy(x => x.Adress);
-            foreach (var group in byAdress)
+            var byAddress = marshalls.OrderBy(x => x.Address).GroupBy(x => x.Address);
+            foreach (var group in byAddress)
             {
                 Console.WriteLine(group.Key);
 
@@ -151,8 +150,8 @@ namespace LighterGrp3.Klass
         }
         public static void PrintAllMarshalls()
         {
-            var byAdress = marshalls.OrderBy(x => x.Adress).GroupBy(x => x.Adress);
-            foreach (var group in byAdress)
+            var byAddress = marshalls.OrderBy(x => x.Address).GroupBy(x => x.Address);
+            foreach (var group in byAddress)
             {
                 Console.Write(group.Key);
 
@@ -226,7 +225,7 @@ namespace LighterGrp3.Klass
                     Console.WriteLine("Marhall ID: {0}", group.ID);
                     Console.WriteLine("Marshall brand: {0}", group.Brand);
                     Console.WriteLine("Marshall expected burntime {0}", group.BurnHours);
-                    Console.WriteLine("Marshall adress {0}", group.Adress);
+                    Console.WriteLine("Marshall adress {0}", group.Address);
                     Console.WriteLine("Marshall postal code {0}", group.PostalCode);
                     Console.WriteLine("Marshall registered time {0}", group.RegTime);
                     Console.WriteLine("Marshall will expire in {0}", group.BurnOutTime);
