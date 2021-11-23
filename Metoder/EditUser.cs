@@ -65,9 +65,11 @@ namespace LighterGrp3.Metoder
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+            
                 EditUser.EditUserMethod();
             }
 
+            Console.ReadLine();
 
 
         }
