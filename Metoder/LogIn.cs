@@ -9,7 +9,7 @@ namespace LighterGrp3.Metoder
     {
         public static User LogInMethod()
         {
-            Console.WriteLine("Enter you're user ID: ");
+            Console.WriteLine("Enter you're user ID : ");
 
             try
             {
@@ -19,12 +19,12 @@ namespace LighterGrp3.Metoder
 
                     if (user.Value.ID == answer)
                     {
-                        Console.WriteLine("Successfull Login");
+                        Console.WriteLine("Successfull login.");
                         return user.Value;
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect Login. Please try again.");
+                        Console.WriteLine("Incorrect login. Please try again.");
                         StartingScreen.StartMenu();
                         return null;
                     }
