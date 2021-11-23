@@ -12,6 +12,7 @@ namespace LighterGrp3
             int userInput = 0;
             do
             {
+
                 Console.WriteLine(@"Main menu:\n
 1. Find active marshalls in your area
 2. Show list with active marshalls
@@ -20,6 +21,7 @@ namespace LighterGrp3
 5. Show user profile
 6. Edit user profile
 7. Exit program");
+
 
                 try
                 {
@@ -38,39 +40,36 @@ namespace LighterGrp3
             {
                 case 1:
                     // Metod för att se aktiva marschaller genom att söka på postnummer
+                    Marshall.SearchMarshall();
                     break;
                 case 2:
                     // Metod som visar lista med aktiva marschaller
                     Marshall.ActiveMarshalls();
-                    HeadMenu.MainMenu();
-
+                    MainMenu();
                     break;
                 case 3:
                     // Metod där man kan lägga till en NY marschall
                     AddMarshall.AddMarshallFromConsole();
-                    
                     break;
                 case 4:
-                    // Metod där man kan lägga till en redan existerande marschall
+                    // Metod som adderar 1 till lost lighter counter
+                    CurrentUser.current.AddLostLighter();
                     break;
                 case 5:
-                    // Metod som adderar 1 till lost lighter counter
-                    CurrentUser.current.AddLostLighter(); 
-                    break;
-                case 6:
                     // Metod som visar användarens profil
                     CurrentUser.current.PrintCurrentUser();
-                    HeadMenu.MainMenu();
+                    MainMenu();
                     break;
-                case 7:
+                case 6:
                     // Metod som editerar användarens profil
                     EditUser.EditUserMethod();
-                    HeadMenu.MainMenu();
+                    MainMenu();
                     break;
-                case 8:
+                case 7:
                     // Metod som visar hejdåhälsning och avslutar programmet
-                    ExitProgram.EndMessage(); 
-                    break; 
+                    ExitProgram.EndMessage();
+                    break;
+                   
             }
         }
 

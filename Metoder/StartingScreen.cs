@@ -46,6 +46,7 @@ Enter one of below numbers to proceed.\n
                     
                     break;
                 case 3:
+                    Marshall.PrintAllMarshalls();
                     // Metod för se lista med marschaller (Även om man inte är inloggad.)
                     break;
                 case 4:
