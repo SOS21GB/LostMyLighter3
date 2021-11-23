@@ -12,14 +12,16 @@ namespace LighterGrp3
             int userInput = 0;
             do
             {
-                Console.WriteLine("Main menu:\n");
-                Console.WriteLine("1. Find active marchals in your area");
-                Console.WriteLine("2. Show list with active marshals");
-                Console.WriteLine("3. Add new marshal to list");
-                Console.WriteLine("4. Lost lighter counter");
-                Console.WriteLine("5. Show User profile");
-                Console.WriteLine("6. Edit User profile");
-                Console.WriteLine("7. Exit program");
+
+                Console.WriteLine(@"Main menu:\n
+1. Find active marshalls in your area
+2. Show list with active marshalls
+3. Add new marshall to list
+4. Lost lighter counter
+5. Show user profile
+6. Edit user profile
+7. Exit program");
+
 
                 try
                 {

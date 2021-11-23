@@ -14,13 +14,12 @@ namespace LighterGrp3
             int userInput = 0;
             do
             {
-                Console.WriteLine("WELCOME TO 'LOST MY LIGTHER'");
-                Console.WriteLine("Enter one of below numbers to proceed.\n");
-                Console.WriteLine("1. Log in");
-                Console.WriteLine("2. Create new user");
-                Console.WriteLine("3. View list of marshals");
-                Console.WriteLine("4. Exit program");
-                
+                Console.WriteLine(@"WELCOME TO 'LOST MY LIGTHER'!
+Enter one of below numbers to proceed.\n
+1. Log in
+2. Create new user
+3. View list of marshalls
+4. Exit program");
                 try
                 {
                     userInput = Convert.ToInt32(Console.ReadLine());

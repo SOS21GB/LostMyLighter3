@@ -13,7 +13,7 @@ namespace LighterGrp3.Klass
         private string _adress;
         private string _postalCode;
         private string _brand = "Unknown";
-        private double _burnHours;
+        private double _burnHours = 0;
 
         private DateTime _burnOutTime;
         private int _regByUser;
@@ -136,10 +136,12 @@ namespace LighterGrp3.Klass
                     if (DateTime.Now < m.BurnOutTime)
                     {
 
-                        Console.WriteLine(m.Brand);
-                        Console.WriteLine(m.Adress);
-                        Console.WriteLine(m.BurnOutTime);
-                        Console.WriteLine("Registered by user{0}, {1}", m.RegByUser, m.RegTime);
+
+                        Console.WriteLine($"Brand : {m.Brand}");
+                        Console.WriteLine($"Address : {m.Address} {m.PostalCode}");
+                        Console.WriteLine($"Will burn out in {m.BurnOutTime} hours.");
+                        Console.WriteLine($"Registered by : User{m.RegByUser}, {m.RegTime}");
+
                         Console.WriteLine();
 
 
