@@ -19,7 +19,7 @@ namespace LighterGrp3.Metoder
                 string name = Console.ReadLine();
                 Console.Write("Enter age : ");
                 int age = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Enter Address : ");
+                Console.Write("Enter address : ");
                 string address = Console.ReadLine();
                 int numberofsearches = 0;
                 int numberofregisteredlighters = 0;

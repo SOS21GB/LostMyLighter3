@@ -75,9 +75,12 @@ Number of lost lighters : {NumberOfLostLighters}
         public void AddLostLighter()
         {
             NumberOfLostLighters++;
-            Console.WriteLine("Number of lost lighters : {0}", NumberOfLostLighters);
-            // Tryck för att komma vidare
-            Console.WriteLine("Press any key to return to main menu");
+            /*
+            Console.WriteLine($@"You have lost {NumberOfLostLighters} lighters.
+Press any key to return to main menu.");
+            */
+            Console.WriteLine(@$"Number of lost lighters : {NumberOfLostLighters}
+Press any key to return to main menu.");
             Console.ReadKey();
             HeadMenu.MainMenu();
         }
