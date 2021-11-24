@@ -230,6 +230,7 @@ Marshall will burn out at {group.BurnOutTime}
                 }
                 else if (test)
                 {
+
                     Console.WriteLine("No active marshalls on this postal code");
                     SearchMarshall();
                 }

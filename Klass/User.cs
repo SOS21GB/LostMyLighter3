@@ -72,10 +72,12 @@ Number of lost lighters : {NumberOfLostLighters}
         public void AddLostLighter()
         {
             NumberOfLostLighters++;
+
             Console.WriteLine(@$"
 Number of lost lighters : {NumberOfLostLighters}
 Press any key to return to main menu.
 ");
+
             Console.ReadKey();
             HeadMenu.MainMenu();
         }
