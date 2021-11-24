@@ -199,6 +199,21 @@ Search for existing marshalls by :
 
             }
         }
+
+        public static bool IsItCharOrDigit(string input)
+        {
+            bool isItChar = false;
+            foreach (char c in input)
+            {
+                if (char.IsLetter(c))
+                {
+                    isItChar = true;
+                    return isItChar;
+                }
+            }
+            return isItChar;
+        }
+
         public static void SearchMarshallPostalCode()
         {
             bool test = true;
@@ -207,6 +222,13 @@ Search for existing marshalls by :
                 Console.WriteLine("Enter postal code : ");
                 string indata = (Console.ReadLine());
                 CurrentUser.current.AddSearchCount();
+
+                if (IsItCharOrDigit(indata))
+                {
+                    Console.WriteLine("Please enter digits!");
+                    SearchMarshall();
+                }
+
                 var postalCodeMarshall = marshalls.Where(name => name.PostalCode == indata);
                 foreach (var group in postalCodeMarshall)
                 {
@@ -217,7 +239,7 @@ Marshall ID : {group.ID}
 Brand : {group.Brand}
 Expected burn time : {group.BurnHours}h.
 Address : {group.Address}, {group.PostalCode}
-Registered by user{group.RegByUser} at {group.RegTime}
+Registered by user {CurrentUser.current.ID} at {group.RegTime}
 Marshall will burn out at {group.BurnOutTime}
 ");
                         test = false;
