@@ -201,6 +201,21 @@ Marshall will burn out at {m.BurnOutTime}
             }
 
         }
+
+        public static bool IsItCharOrDigit(string input)
+        {
+            bool isItChar = false;
+            foreach (char c in input)
+            {
+                if (char.IsLetter(c))
+                {
+                    isItChar = true;
+                    return isItChar;
+                }
+            }
+            return isItChar;
+        }
+
         public static void SearchMarshallPostalCode()
         {
 
@@ -212,6 +227,13 @@ Marshall will burn out at {m.BurnOutTime}
                 Console.WriteLine("Enter postal code : ");
                 string indata = (Console.ReadLine());
                 CurrentUser.current.AddSearchCount();
+
+                if (IsItCharOrDigit(indata))
+                {
+                    Console.WriteLine("Please enter digits!");
+                    SearchMarshall();
+                }
+
                 var postalCodeMarshall = marshalls.Where(name => name.PostalCode == indata);
                 foreach (var group in postalCodeMarshall)
                 {
@@ -222,7 +244,7 @@ Marshall will burn out at {m.BurnOutTime}
 Brand : {group.Brand}
 Expected burn time : {group.BurnHours}h.
 Address : {group.Address}, {group.PostalCode}
-Registered by user{CurrentUser.current.ID} at {group.RegTime}
+Registered by user {CurrentUser.current.ID} at {group.RegTime}
 Marshall will burn out at {group.BurnOutTime}
 ");
 
