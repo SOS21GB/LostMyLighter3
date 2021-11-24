@@ -19,7 +19,7 @@ namespace LighterGrp3.Metoder
             do
             {
                 {
-                    Console.WriteLine("Choose what you want to edit: ");
+                    Console.WriteLine("Choose what you want to edit : ");
                     Console.WriteLine("1. Edit name");
                     Console.WriteLine("2. Edit age");
                     Console.WriteLine("3. Edit address");
@@ -31,7 +31,7 @@ namespace LighterGrp3.Metoder
                     catch (Exception)
                     {
                         Console.Clear();
-                        Console.WriteLine("You need to choose a number from the menu. Press a key and try again: ");
+                        Console.WriteLine("You need to choose a number from the menu. Press any key and try again: ");
                     }
 
 
@@ -45,18 +45,21 @@ namespace LighterGrp3.Metoder
                 switch (userInput)
                 {
                     case 1:
-                        Console.WriteLine("Edit name");
+                        Console.WriteLine("Edit name :");
+                        //Console.Write("Enter new name : ");
                         CurrentUser.current.Name = Console.ReadLine();
                         break;
 
                     case 2:
-                        Console.WriteLine("Edit age");
+                        Console.WriteLine("Edit age : ");
+                        //Console.Write("Enter new age : ");
                         CurrentUser.current.Age = Convert.ToInt32(Console.ReadLine());
                         break;
 
                     case 3:
-                        Console.WriteLine("Edit address");
-                        CurrentUser.current.Adress = Console.ReadLine();
+                        Console.WriteLine("Edit address : ");
+                        //Console.Write("Enter new address : ");
+                        CurrentUser.current.Address = Console.ReadLine();
                         break;
 
                 }
