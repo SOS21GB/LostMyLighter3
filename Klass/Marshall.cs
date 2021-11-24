@@ -128,17 +128,16 @@ namespace LighterGrp3.Klass
             var byAddress = marshalls.OrderBy(x => x.Address).GroupBy(x => x.Address);
             foreach (var group in byAddress)
             {
-                Console.WriteLine(group.Key);
-
                 foreach (var m in group)
                 {
                     if (DateTime.Now < m.BurnOutTime)
                     {
-                        Console.WriteLine($@", {m.PostalCode}
+                        Console.WriteLine($@"
 Marshall ID : {m.ID}
+Address : {m.Address}, {m.PostalCode}
 Brand : {m.Brand}
 Expected burn time : {m.BurnHours}h.
-Registered by user{CurrentUser.current.ID} at {m.RegTime}
+Registered by user{m.RegByUser} at {m.RegTime}
 Marshall will burn out at {m.BurnOutTime}
 ");
                     }
@@ -150,28 +149,28 @@ Marshall will burn out at {m.BurnOutTime}
             var byAddress = marshalls.OrderBy(x => x.Address).GroupBy(x => x.Address);
             foreach (var group in byAddress)
             {
-                Console.Write(group.Key);
-
                 foreach (var m in group)
                 {
-                    Console.WriteLine(@$", {m.PostalCode}
+                    Console.WriteLine(value: $@"
 Marshall ID : {m.ID}
+Address : {m.Address}, {m.PostalCode}
 Brand : {m.Brand}
 Expected burn time : {m.BurnHours}h.
-Registered by user{CurrentUser.current.ID} at {m.RegTime}
+Registered by user{m.RegByUser} at {m.RegTime}
 Marshall will burn out at {m.BurnOutTime}
 ");
                 }
             }
         }
 
- 
+
         public static void SearchMarshall()
         {
             int userInput = 0;
             do
             {
-                Console.WriteLine(@"Search for existing marshalls by:
+                Console.WriteLine(@"
+Search for existing marshalls by :
 1. Postal code
 2. Go back to main menu
 ");
@@ -199,7 +198,6 @@ Marshall will burn out at {m.BurnOutTime}
                     break;
 
             }
-
         }
 
         public static bool IsItCharOrDigit(string input)
@@ -218,12 +216,9 @@ Marshall will burn out at {m.BurnOutTime}
 
         public static void SearchMarshallPostalCode()
         {
-
             bool test = true;
             while (test)
             {
-
-
                 Console.WriteLine("Enter postal code : ");
                 string indata = (Console.ReadLine());
                 CurrentUser.current.AddSearchCount();
@@ -237,20 +232,18 @@ Marshall will burn out at {m.BurnOutTime}
                 var postalCodeMarshall = marshalls.Where(name => name.PostalCode == indata);
                 foreach (var group in postalCodeMarshall)
                 {
-                  if (DateTime.Now < group.BurnOutTime) 
+                    if (DateTime.Now < group.BurnOutTime)
                     {
-
-                    Console.WriteLine(@$"Marshall ID : {group.ID}
+                        Console.WriteLine(@$"
+Marshall ID : {group.ID}
 Brand : {group.Brand}
 Expected burn time : {group.BurnHours}h.
 Address : {group.Address}, {group.PostalCode}
 Registered by user {CurrentUser.current.ID} at {group.RegTime}
 Marshall will burn out at {group.BurnOutTime}
 ");
-
-                    test = false;
+                        test = false;
                     }
-
                 }
                 if (String.IsNullOrEmpty(indata))
                 {
@@ -259,17 +252,14 @@ Marshall will burn out at {group.BurnOutTime}
                 }
                 else if (test)
                 {
-                    
-                    Console.WriteLine("No active Marshalls on this postalcode");
+
+                    Console.WriteLine("No active marshalls on this postal code");
                     SearchMarshall();
                 }
- 
                 Console.WriteLine("Press any key to continue..");
                 Console.ReadKey();
                 HeadMenu.MainMenu();
             }
         }
-
     }
-
 }

@@ -1,15 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LighterGrp3.Metoder;
 
 namespace LighterGrp3.Klass
 {
 
-   
-    
+
+
 
     public class User
 
@@ -19,9 +15,9 @@ namespace LighterGrp3.Klass
         public string Name { get; set; }
         public int Age { get; set; }
         public string Address { get; set; }
-        public int NumberOfSearches { get; set; } 
-        public int NumberOfRegisteredMarshalls { get; set; } 
-        public int NumberOfLostLighters { get; set; } 
+        public int NumberOfSearches { get; set; }
+        public int NumberOfRegisteredMarshalls { get; set; }
+        public int NumberOfLostLighters { get; set; }
         public static Dictionary<int, User> users = new Dictionary<int, User>();
 
 
@@ -38,12 +34,13 @@ namespace LighterGrp3.Klass
             this.NumberOfSearches = numberofsearches;
             this.NumberOfRegisteredMarshalls = numberofregisteredmarshalls;
             this.NumberOfLostLighters = numberoflostlighters;
-            users.Add(ID,this);
+            users.Add(ID, this);
         }
 
         public void PrintCurrentUser()
         {
-            Console.WriteLine($@"User{ID}
+            Console.WriteLine($@"
+User{ID}
 Name : {Name}
 Age : {Age}
 Address : {Address}
@@ -61,7 +58,7 @@ Number of lost lighters : {NumberOfLostLighters}
         }
 
 
-        public  void AddSearchCount()
+        public void AddSearchCount()
         {
             NumberOfSearches++;
         }
@@ -75,14 +72,17 @@ Number of lost lighters : {NumberOfLostLighters}
         public void AddLostLighter()
         {
             NumberOfLostLighters++;
-            Console.WriteLine("Number of lost lighters : {0}", NumberOfLostLighters);
-            // Tryck för att komma vidare
-            Console.WriteLine("Press any key to return to main menu");
+
+            Console.WriteLine(@$"
+Number of lost lighters : {NumberOfLostLighters}
+Press any key to return to main menu.
+");
+
             Console.ReadKey();
             HeadMenu.MainMenu();
         }
     }
 
-    
+
 
 }

@@ -9,6 +9,8 @@ namespace LighterGrp3.Metoder
 {
     class AddMarshall
     {
+
+        //kanske lägga till metod för att TÄNDA en marschall? Kanske det vi tänkte med add existing /Vips
         public static void AddMarshallFromConsole()
         {
             DateTime regTime = DateTime.Now;

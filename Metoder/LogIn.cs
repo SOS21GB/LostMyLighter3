@@ -9,7 +9,7 @@ namespace LighterGrp3.Metoder
     {
         public static User LogInMethod()
         {
-            Console.WriteLine("Enter you're user ID : ");
+            Console.WriteLine("Enter your user ID : ");
 
             try
             {

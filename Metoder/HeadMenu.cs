@@ -13,7 +13,8 @@ namespace LighterGrp3
             do
             {
 
-                Console.WriteLine(@"Main menu:
+                Console.WriteLine(@"
+Main menu:
 
 1. Find active marshalls in your area
 2. Show list with active marshalls
