@@ -239,7 +239,7 @@ Marshall ID : {group.ID}
 Brand : {group.Brand}
 Expected burn time : {group.BurnHours}h.
 Address : {group.Address}, {group.PostalCode}
-Registered by user {CurrentUser.current.ID} at {group.RegTime}
+Registered by user {group.RegByUser} at {group.RegTime}
 Marshall will burn out at {group.BurnOutTime}
 ");
                         test = false;
