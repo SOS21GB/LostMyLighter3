@@ -45,20 +45,17 @@ namespace LighterGrp3.Metoder
                 switch (userInput)
                 {
                     case 1:
-                        Console.WriteLine("Edit name :");
-                        //Console.Write("Enter new name : ");
+                        Console.Write("Enter new name : ");
                         CurrentUser.current.Name = Console.ReadLine();
                         break;
 
                     case 2:
-                        Console.WriteLine("Edit age : ");
-                        //Console.Write("Enter new age : ");
+                        Console.Write("Enter new age : ");
                         CurrentUser.current.Age = Convert.ToInt32(Console.ReadLine());
                         break;
 
                     case 3:
-                        Console.WriteLine("Edit address : ");
-                        //Console.Write("Enter new address : ");
+                        Console.Write("Enter new address : ");
                         CurrentUser.current.Address = Console.ReadLine();
                         break;
 
